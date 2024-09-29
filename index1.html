@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+        .greeting-card {
+            background-color: rgb(0, 0, 0);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="greeting-card">
+        <p style="line-height: 1.2;">Hello Junior of CSE-C & CSIT </p>
+        <br>
+        <p> We Welcome You To</p>
+        <h1> <b>BEGGINER'S BASH!</b></h1>
+        <p>We're delighted to invite you to join us.</p>
+        <p>come and enjoy the event</p>
+    </div>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const greetingCard = document.querySelector('.greeting-card');
+        
+        // Add fade-in effect
+        greetingCard.style.opacity = '0';
+        greetingCard.style.transition = 'opacity 1s ease-in-out';
+        
+        setTimeout(function() {
+            greetingCard.style.opacity = '1';
+        }, 500);
+
+        // Add hover effect
+        greetingCard.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease-in-out';
+        });
+
+        greetingCard.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+</script>
+<style>
+    @keyframes colorChange {
+        10% { background-color: #6a5210; }
+        25% { background-color: #3a150b; }
+        50% { background-color: #0a736e; }
+        50% { background-color: #fcb69f; }
+        100% { background-color: #9af7ff; }
+    }
+
+    .greeting-card {
+        animation: colorChange 10s infinite;
+        transition: all 0.3s ease-in-out;
+        border: 2px solid transparent;
+    }
+
+    .greeting-card:hover {
+        transform: translateY(-10px) rotate(2deg) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        border-color: #ff9a9e;
+    }
+
+    h1 {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5em;
+    }
+
+    p {
+        transition: color 0.3s ease;
+    }
+
+    .greeting-card:hover p {
+        color: #ff6b6b;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const greetingCard = document.querySelector('.greeting-card');
+        
+        greetingCard.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            this.style.setProperty('--x', `${x}px`);
+            this.style.setProperty('--y', `${y}px`);
+            this.style.background = `radial-gradient(circle at var(--x) var(--y), #ffecd2, #fcb69f, #ff9a9e)`;
+        });
+
+        greetingCard.addEventListener('mouseleave', function() {
+            this.style.background = '';
+        });
+    });
+</script>
+<style>
+    @media screen and (max-width: 768px) {
+        .greeting-card {
+            width: 90%;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    @keyframes fullPageAnimation {
+        0% {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80%;
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2);
+        animation: fullPageAnimation 1s ease-out;
+    }
+
+    .greeting-card {
+        max-width: 600px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    @keyframes floatAnimation {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .greeting-card:hover {
+        animation: floatAnimation 3s ease-in-out infinite;
+    }
+</style>
+<script>
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '0';
+        setTimeout(function() {
+            document.body.style.transition = 'opacity 1s ease-in';
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+</script>
+<style>
+    .greeting-card h1 {
+        color: black;
+    }
+</style>
+<style>
+    .greeting-card {
+        max-width: 800px; /* Increased from 600px */
+        padding: 40px; /* Increased from 20px */
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: scale(0.9);
+        opacity: 0;
+        animation: cardAppear 1.5s forwards, cardPulse 3s infinite alternate;
+    }
+
+    @keyframes cardAppear {
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes cardPulse {
+        from {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        to {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .greeting-card h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        animation: textFadeIn 2s;
+    }
+
+    .greeting-card p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        animation: textFadeIn 2s 0.5s backwards;
+    }
+
+    @keyframes textFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .greeting-card:hover {
+        animation: floatAnimation 3s ease-in-out infinite, cardGlow 1.5s infinite alternate;
+    }
+
+    @keyframes cardGlow {
+        to {
+            box-shadow: 0 0 30px rgba(131, 251, 229, 0.7);
+        }
+    }
+</style>
+<style>
+    @keyframes colorChange {
+        0% { background-color: #ff9a9e; }
+        25% { background-color: #65832f; }
+        50% { background-color: #96621a; }
+        75% { background-color: #0a3740; }
+        100% { background-color: #7d1277; }
+    }
+
+    .greeting-card {
+        animation: colorChange 5s infinite;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const greetingCard = document.querySelector('.greeting-card');
+        
+        // Existing animations and effects will be preserved
+        const existingAnimations = greetingCard.style.animation;
+        greetingCard.style.animation = `${existingAnimations}, colorChange 10s infinite`;
+    });
+</script>
+<style>
+    .greeting-card {
+        font-size: 1.5em; /* Increase the base font size for the entire card */
+    }
+
+    .greeting-card h1 {
+        font-size: 2.5em; /* Make the heading even larger */
+    }
+
+    .greeting-card p {
+        font-size: 1.2em; /* Adjust paragraph size relative to the new base size */
+    }
+
+    @media (max-width: 768px) {
+        .greeting-card {
+            font-size: 1.2em; /* Slightly smaller font size for mobile devices */
+        }
+    }
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body, .greeting-card {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .greeting-card h1 {
+        font-weight: 600;
+    }
+
+    .greeting-card p {
+        font-weight: 300;
+    }
+</style>
+<style>
+    .greeting-card p:nth-of-type(2) {
+        font-weight: bold;
+    }
+</style>
+<style>
+    .event-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+        font-size: 1em;
+    }
+
+    .event-details div {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .event-details div:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .event-details h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #ff9a9e;
+    }
+
+    .event-details p {
+        margin: 0;
+        color: #ffecd2;
+    }
+
+    @media (max-width: 768px) {
+        .event-details {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const greetingCard = document.querySelector('.greeting-card');
+        const eventDetails = document.createElement('div');
+        eventDetails.className = 'event-details';
+        eventDetails.innerHTML = `
+            <div>
+                <h2>Time</h2>
+                <p>11:30 AM - 01:30 PM</p>
+            </div>
+            <div>
+                <h2>Venue</h2>
+                <p>Auditorium, Block 5</p>
+                <p>Trident Academy of Technology, BBSR</p>
+            </div>
+        `;
+        greetingCard.appendChild(eventDetails);
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add a subtle animation to the greeting card
+        const greetingCard = document.querySelector('.greeting-card');
+        greetingCard.style.opacity = '0';
+        greetingCard.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            greetingCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            greetingCard.style.opacity = '1';
+            greetingCard.style.transform = 'translateY(0)';
+        }, 100);
+
+        // Add hover effect to event details
+        const eventDetails = document.querySelectorAll('.event-details div');
+        eventDetails.forEach(detail => {
+            detail.addEventListener('mouseenter', () => {
+                detail.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+            detail.addEventListener('mouseleave', () => {
+                detail.style.boxShadow = 'none';
+            });
+        });
+
+        // Add a countdown timer
+        const eventDate = new Date('2024-10-03T11:00:00').getTime();
+        const countdownElement = document.createElement('div');
+        countdownElement.className = 'countdown';
+        greetingCard.appendChild(countdownElement);
+
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `
+                <h2>Event Starts In</h2>
+                <div class="countdown-timer">
+                    <span>${days}d</span>
+                    <span>${hours}h</span>
+                    <span>${minutes}m</span>
+                    <span>${seconds}s</span>
+                </div>
+            `;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                countdownElement.innerHTML = "<h2>Event Has Started!</h2>";
+            }
+        }, 1000);
+    });
+</script>
+<style>
+    .countdown {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .countdown h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #ff9a9e;
+    }
+
+    .countdown-timer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .countdown-timer span {
+        font-size: 1.5em;
+        color: #ffecd2;
+    }
+
+    @media (max-width: 768px) {
+        .countdown-timer {
+            flex-direction: column;
+        }
+        .countdown-timer span {
+            margin: 5px 0;
+        }
+    }
+</style>
+<style>
+    
+
+    body {
+        animation: funkyBackground 5s linear infinite;
+        background-size: 400% 400%;
+    }
+
+    .greeting-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1, p {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<style>
+    @keyframes funkyBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    body {
+        background: linear-gradient(
+            45deg, 
+            #d3c5e5, #c4dfe6, #a1d6e2, #ffff00, #245b43, #bc36de
+        );
+        background-size: 400% 400%;
+        animation: funkyBackground 15s ease infinite;
+    }
+
+    .greeting-card {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    }
+
+    h1, p {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+</style>
